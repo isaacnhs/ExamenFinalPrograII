@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="ExamenFinal.Capa_Presentacion.Menu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../CSS/MenuStyle.css" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+
+        <div id="circularMenu" class="circular-menu">
+            <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+                <i class="fa fa-plus"></i>
+            </a>
+
+            <menu class="items-wrapper">
+                <a href="/CapaPresentacion/Logout.aspx" class="menu-item fa fa-right-from-bracket" title="Cerrar sesión"></a>
+                <a href="/CapaPresentacion/Inicio.aspx" class="menu-item fa fa-house-chimney-user" title="Inicio"></a>
+            </menu>
+        </div>
+
+        <div id="circularMenu1" class="circular-menu circular-menu-left">
+
+            <a class="floating-btn" onclick="document.getElementById('circularMenu1').classList.toggle('active');">
+                <i class="fa fa-bars"></i>
+            </a>
+
+            <menu class="items-wrapper">
+                <a href="/CapaPresentacion/Agente/GestionAgentes.aspx" class="menu-item fa fa-user-secret" title="Agentes"></a>
+                <a href="/CapaPresentacion/Cliente/GestionClientes.aspx" class="menu-item fa fa-user" title="Clientes"></a>
+                <a href="/CapaPresentacion/Casa/GestionCasas.aspx" class="menu-item fa fa-home" title="Casas"></a>
+                <a href="/CapaPresentacion/Venta/GestionVentas.aspx" class="menu-item fa fa-money-bill" title="Ventas"></a>
+            </menu>
+        </div>
+    </form>
+</body>
+</html>
